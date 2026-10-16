@@ -1,0 +1,1727 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#030d1a" />
+    <meta
+      name="description"
+      content="Timer System by LAP IT Solutions brings live venue timers,
+point of sale, reservations, inventory, and cashier reporting together."
+    />
+    <title>Timer System — Every minute accounted for.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Outline SVG icon symbols -->
+    <svg
+      aria-hidden="true"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-6-6 6 6-6 6" />
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="m10 8 6 4-6 4z" />
+      </symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24">
+        <path d="m13 2-9 12h7l-1 8 10-12h-7l1-8" />
+      </symbol>
+      <symbol id="i-receipt" viewBox="0 0 24 24">
+        <path d="M4 3h16v18l-4-2-4 2-4-2-4 2V3Zm4 5h8M8 12h8m-8 4h5" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="m12 2 8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4Z" />
+        <path d="m9 12 2 2 4-4" />
+      </symbol>
+      <symbol id="i-bars" viewBox="0 0 24 24">
+        <path d="M4 20V12h4v8m4 0V5h4v15m4 0v-9h4v9" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="13" r="9" />
+        <path d="M12 8v5l3 2M9 2h6" />
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2" />
+        <path d="M7 3v4m10-4v4M3 10h18" />
+      </symbol>
+      <symbol id="i-drawer" viewBox="0 0 24 24">
+        <path d="M3 9h18v12H3zM6 9V4h12v5M9 15h6M2 13h20" />
+      </symbol>
+      <symbol id="i-box" viewBox="0 0 24 24">
+        <path d="m12 2 9 5v10l-9 5-9-5V7l9-5Zm-9 5 9 5 9-5M12 12v10" />
+      </symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24">
+        <path d="M3 3h9l9 9-9 9-9-9V3Z" />
+        <circle cx="8" cy="8" r="1.3" />
+      </symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="14" rx="2" />
+        <path d="M8 21h8m-4-4v4" />
+      </symbol>
+      <symbol id="i-utensils" viewBox="0 0 24 24">
+        <path d="M4 2v8m4-8v8M4 6h4m-2 4v12M16 2c-2 3-3 6-3 10h5V2m0 10v10" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24">
+        <path d="m5 5 14 14M19 5 5 19" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+          d="M22 16.8v3a2 2 0 0 1-2.2 2 19 19 0 0 1-17.6-17.6A2 2 0 0 1 4.2 2h3
+             A2 2 0 0 1 9.1 3.7l.6 3a2 2 0 0 1-.6 1.8L7.6 10a15 15 0 0 0 6.4 6.4
+             l1.5-1.5a2 2 0 0 1 1.8-.6l3 .6A2 2 0 0 1 22 16.8Z"
+        />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m2 6 10 8L22 6" />
+      </symbol>
+      <symbol id="i-map" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20M12 2c-5 5-5 15 0 20m0-20c5 5 5 15 0 20" />
+      </symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24">
+        <path d="M7 5v14m10-14v14" />
+      </symbol>
+      <symbol id="i-reset" viewBox="0 0 24 24">
+        <path d="M3 11a9 9 0 1 1 2 7M3 4v7h7" />
+      </symbol>
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="m3 11 9-8 9 8v10H3V11Zm6 10v-7h6v7" />
+      </symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" />
+        <path
+          d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"
+        />
+      </symbol>
+      <symbol id="i-list" viewBox="0 0 24 24">
+        <path d="M9 6h12M9 12h12M9 18h12M3 6h1M3 12h1M3 18h1" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      </symbol>
+      <symbol id="i-card" viewBox="0 0 24 24">
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <path d="M2 10h20M7 15h2m4 0h4" />
+      </symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24">
+        <path
+          d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"
+        />
+      </symbol>
+      <symbol id="i-chef" viewBox="0 0 24 24">
+        <path
+          d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6v-7.13zM6 17h12"
+        />
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+      </symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24">
+        <path
+          d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- Header Navigation -->
+    <header>
+      <div class="shell nav-inner">
+        <a href="#overview" class="brand" aria-label="Timer System home">
+          <span class="brand-mark">
+            <span class="l">L</span><span class="ap">AP</span>
+          </span>
+          <span class="brand-sub">TIMER SYSTEM</span>
+        </a>
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+          <a href="#overview" class="active">Overview</a>
+          <a href="#features">What We Offer</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="btn btn-primary">
+          Get Started
+          <svg class="icon small"><use href="#i-arrow" /></svg>
+        </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="overview">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">All-in-one venue management</span>
+            <h1>
+              Run every<br />
+              <span class="blue">minute</span> better<span class="dot">.</span>
+            </h1>
+            <p class="hero-desc">
+              One powerful system for live table timers, point-of-sale billing,
+              reservations, and daily venue operations. Built to keep every
+              session accurate and every sale accounted for.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">
+                Get Started
+                <svg class="icon small"><use href="#i-arrow" /></svg>
+              </a>
+              <button class="btn btn-ghost" id="openDemo">
+                <svg class="icon"><use href="#i-play" /></svg> Try Live Demo
+              </button>
+            </div>
+            <div class="trust-row">
+              <div class="trust-item">
+                <svg class="icon"><use href="#i-zap" /></svg>
+                Real-time<br />Session Timers
+              </div>
+              <div class="trust-item">
+                <svg class="icon"><use href="#i-receipt" /></svg>
+                POS &amp;<br />Unified Billing
+              </div>
+              <div class="trust-item">
+                <svg class="icon"><use href="#i-shield" /></svg>
+                Secure<br />Staff Controls
+              </div>
+              <div class="trust-item">
+                <svg class="icon"><use href="#i-bars" /></svg>
+                Built for<br />Entertainment
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-product">
+            <div class="dashboard real-ui">
+              <!-- Top System Header Bar -->
+              <div class="real-topbar">
+                <div class="real-topbar-left">
+                  <div class="real-brand-wrap">
+                    <span class="brand-mark real-logo">
+                      <span class="l">L</span><span class="ap">AP</span>
+                    </span>
+                    <div class="real-brand-text">
+                      <span class="real-brand-title">LAP IT</span>
+                      <span class="real-brand-sub">Timer System</span>
+                    </div>
+                  </div>
+                  <h3 class="real-page-title">Sessions</h3>
+                </div>
+                <div class="real-topbar-right">
+                  <div class="real-shift-pill">
+                    <div class="real-shift-icon">
+                      <svg class="icon"><use href="#i-drawer" /></svg>
+                    </div>
+                    <div class="real-shift-info">
+                      <div class="real-shift-user">
+                        <strong>Shift #1 - admin</strong>
+                        <svg class="icon small"><use href="#i-arrow" /></svg>
+                      </div>
+                      <span class="real-shift-meta"
+                        >Opened 11:30 AM · Float ₱500.00</span
+                      >
+                    </div>
+                  </div>
+                  <button class="real-icon-btn" aria-label="Settings">
+                    <svg class="icon"><use href="#i-settings" /></svg>
+                  </button>
+                  <button class="real-icon-btn" aria-label="Alerts">
+                    <svg class="icon"><use href="#i-bell" /></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Content Area: Sidebar + Main App -->
+              <div class="real-body">
+                <!-- Real Left Sidebar -->
+                <aside class="real-sidebar">
+                  <div class="real-menu-group">
+                    <span class="real-group-label">Operations</span>
+                    <button class="real-nav-item active">
+                      <svg class="icon"><use href="#i-clock" /></svg>
+                      <span>Sessions</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-calendar" /></svg>
+                      <span>Reservation</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-drawer" /></svg>
+                      <span>Session Cashier</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-receipt" /></svg>
+                      <span>POS</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-users" /></svg>
+                      <span>Customers</span>
+                    </button>
+                  </div>
+
+                  <div class="real-menu-group">
+                    <span class="real-group-label">Administration</span>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-users" /></svg>
+                      <span>User Management</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-shield" /></svg>
+                      <span>Roles</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-tool" /></svg>
+                      <span>Service Maker</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-tag" /></svg>
+                      <span>Bundles</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-box" /></svg>
+                      <span>Inventory</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-card" /></svg>
+                      <span>Sales</span>
+                    </button>
+                    <button class="real-nav-item">
+                      <svg class="icon"><use href="#i-settings" /></svg>
+                      <span>Venue Settings</span>
+                    </button>
+                  </div>
+
+                  <!-- Alert notification banner in sidebar -->
+                  <div class="real-alert-card">
+                    <div class="real-alert-icon">
+                      <svg class="icon"><use href="#i-clock" /></svg>
+                    </div>
+                    <div class="real-alert-body">
+                      <strong>1 session almost timed out</strong>
+                      <span>Within 50 mins threshold</span>
+                    </div>
+                    <span class="real-alert-badge">1</span>
+                  </div>
+
+                  <!-- User profile footer -->
+                  <div class="real-user-footer">
+                    <div class="real-avatar">SA</div>
+                    <div class="real-user-info">
+                      <strong>System Admin</strong>
+                      <span>admin</span>
+                    </div>
+                  </div>
+                </aside>
+
+                <!-- Real Main Content -->
+                <main class="real-main">
+                  <!-- VIEW 1: All Services Overview (Default) -->
+                  <div class="real-view active" id="viewServices">
+                    <!-- Search and Filter Bar -->
+                    <div class="real-toolbar">
+                      <div class="real-search-wrap">
+                        <svg class="icon real-search-icon">
+                          <circle cx="11" cy="11" r="7" />
+                          <path d="m20 20-3.5-3.5" />
+                        </svg>
+                        <input
+                          type="text"
+                          class="real-search-input"
+                          id="searchServicesInput"
+                          placeholder="Search services..."
+                          aria-label="Search services"
+                        />
+                      </div>
+                      <button class="real-services-filter">
+                        <svg class="icon small"><use href="#i-bars" /></svg>
+                        <span>3 Services</span>
+                      </button>
+                    </div>
+
+                    <!-- 3 Service Cards Grid (Pickleball, Billiards, Karaoke) -->
+                    <div class="real-services-grid">
+                      <!-- Card 1: Pickleball -->
+                      <div class="real-service-card" data-service="pickleball">
+                        <div class="real-card-header">
+                          <h4>Pickleball</h4>
+                        </div>
+                        <div class="real-card-rooms-count">
+                          <span>Rooms</span>
+                          <strong>5</strong>
+                        </div>
+                        <div class="real-stat-pills">
+                          <div class="real-stat-pill available">
+                            <span class="pill-lbl">AVAILABLE</span>
+                            <span class="pill-val">4</span>
+                          </div>
+                          <div class="real-stat-pill in-use">
+                            <span class="pill-lbl">IN USE</span>
+                            <span class="pill-val">1</span>
+                          </div>
+                          <div class="real-stat-pill reserved">
+                            <span class="pill-lbl">RESERVED</span>
+                            <span class="pill-val">0</span>
+                          </div>
+                        </div>
+                        <button
+                          class="real-action-btn"
+                          data-target-view="viewPickleball"
+                        >
+                          View Pickleball rooms
+                        </button>
+                      </div>
+
+                      <!-- Card 2: Billiards -->
+                      <div class="real-service-card" data-service="billiards">
+                        <div class="real-card-header">
+                          <h4>Billiards</h4>
+                        </div>
+                        <div class="real-card-rooms-count">
+                          <span>Rooms</span>
+                          <strong>5</strong>
+                        </div>
+                        <div class="real-stat-pills">
+                          <div class="real-stat-pill available">
+                            <span class="pill-lbl">AVAILABLE</span>
+                            <span class="pill-val">5</span>
+                          </div>
+                          <div class="real-stat-pill in-use">
+                            <span class="pill-lbl">IN USE</span>
+                            <span class="pill-val">0</span>
+                          </div>
+                          <div class="real-stat-pill reserved">
+                            <span class="pill-lbl">RESERVED</span>
+                            <span class="pill-val">0</span>
+                          </div>
+                        </div>
+                        <button
+                          class="real-action-btn"
+                          data-target-view="viewBilliards"
+                        >
+                          View Billiards rooms
+                        </button>
+                      </div>
+
+                      <!-- Card 3: Karaoke -->
+                      <div class="real-service-card" data-service="karaoke">
+                        <div class="real-card-header">
+                          <h4>Karaoke</h4>
+                        </div>
+                        <div class="real-card-rooms-count">
+                          <span>Rooms</span>
+                          <strong>10</strong>
+                        </div>
+                        <div class="real-stat-pills">
+                          <div class="real-stat-pill available">
+                            <span class="pill-lbl">AVAILABLE</span>
+                            <span class="pill-val">10</span>
+                          </div>
+                          <div class="real-stat-pill in-use">
+                            <span class="pill-lbl">IN USE</span>
+                            <span class="pill-val">0</span>
+                          </div>
+                          <div class="real-stat-pill reserved">
+                            <span class="pill-lbl">RESERVED</span>
+                            <span class="pill-val">0</span>
+                          </div>
+                        </div>
+                        <button
+                          class="real-action-btn"
+                          data-target-view="viewKaraoke"
+                        >
+                          View Karaoke rooms
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Footer Bar inside Main Canvas -->
+                    <div class="real-main-footer">
+                      <span>Showing 1-3 of 3 services</span>
+                      <div class="real-pagination">
+                        <button aria-label="Previous page" disabled>
+                          &lt;
+                        </button>
+                        <button aria-label="Next page" disabled>&gt;</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- VIEW 2: Pickleball Rooms (Image 2) -->
+                  <div class="real-view" id="viewPickleball">
+                    <div class="real-toolbar">
+                      <button class="real-back-btn" data-back-to="viewServices">
+                        &lt; All services
+                      </button>
+                      <div class="real-search-wrap">
+                        <svg class="icon real-search-icon">
+                          <circle cx="11" cy="11" r="7" />
+                          <path d="m20 20-3.5-3.5" />
+                        </svg>
+                        <input
+                          type="text"
+                          class="real-search-input"
+                          placeholder="Search Pickleball..."
+                          aria-label="Search Pickleball"
+                        />
+                      </div>
+                      <button class="real-services-filter">
+                        <svg class="icon small"><use href="#i-bars" /></svg>
+                        <span>5 Rooms</span>
+                      </button>
+                    </div>
+
+                    <div class="real-rooms-grid">
+                      <!-- Room 1 (Active In-Use with Red Glow) -->
+                      <div class="real-room-card active-in-use">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <svg class="icon red-spin">
+                              <use href="#i-clock" />
+                            </svg>
+                            <strong>Pickleball 1</strong>
+                          </div>
+                          <span class="real-room-status in-use">IN USE</span>
+                        </div>
+                        <div class="real-room-timer-block">
+                          <div
+                            class="real-live-timer"
+                            data-demo-timer="pickleball-1"
+                          >
+                            00:33:17
+                          </div>
+                          <span class="real-timer-rate"
+                            >Current charge: ₱100.00 (₱100.00/hr)</span
+                          >
+                          <div class="real-timer-specs">
+                            <div class="spec-col">
+                              <span class="spec-label">TIME STARTED</span>
+                              <strong class="spec-value">05:44 PM</strong>
+                            </div>
+                            <div class="spec-col">
+                              <span class="spec-label">HOURS AVAILED</span>
+                              <strong class="spec-value">1 hr</strong>
+                            </div>
+                          </div>
+                          <button class="real-cashier-btn">
+                            Proceed to Session Cashier
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Room 2 (Available) -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Pickleball 2</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱100.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Room 3 (Available) -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Pickleball 3</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱100.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Room 4 (Available) -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Pickleball 4</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱100.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Room 5 (Available) -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Pickleball 5</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱100.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="real-main-footer">
+                      <span>Showing 1-5 of 5 rooms</span>
+                      <div class="real-pagination">
+                        <button aria-label="Previous page" disabled>
+                          &lt;
+                        </button>
+                        <button aria-label="Next page" disabled>&gt;</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- VIEW 3: Billiards Rooms (Image 3) -->
+                  <div class="real-view" id="viewBilliards">
+                    <div class="real-toolbar">
+                      <button class="real-back-btn" data-back-to="viewServices">
+                        &lt; All services
+                      </button>
+                      <div class="real-search-wrap">
+                        <svg class="icon real-search-icon">
+                          <circle cx="11" cy="11" r="7" />
+                          <path d="m20 20-3.5-3.5" />
+                        </svg>
+                        <input
+                          type="text"
+                          class="real-search-input"
+                          placeholder="Search Billiards..."
+                          aria-label="Search Billiards"
+                        />
+                      </div>
+                      <button class="real-services-filter">
+                        <svg class="icon small"><use href="#i-bars" /></svg>
+                        <span>5 Rooms</span>
+                      </button>
+                    </div>
+
+                    <div class="real-rooms-grid">
+                      <!-- Billiards 1 -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Billiards 1</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱250.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Billiards 2 -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Billiards 2</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱250.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Billiards 3 -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Billiards 3</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱250.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Billiards 4 -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Billiards 4</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱250.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Billiards 5 -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Billiards 5</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱250.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="real-main-footer">
+                      <span>Showing 1-5 of 5 rooms</span>
+                      <div class="real-pagination">
+                        <button aria-label="Previous page" disabled>
+                          &lt;
+                        </button>
+                        <button aria-label="Next page" disabled>&gt;</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- VIEW 4: Karaoke Rooms (Image 4) -->
+                  <div class="real-view" id="viewKaraoke">
+                    <div class="real-toolbar">
+                      <button class="real-back-btn" data-back-to="viewServices">
+                        &lt; All services
+                      </button>
+                      <div class="real-search-wrap">
+                        <svg class="icon real-search-icon">
+                          <circle cx="11" cy="11" r="7" />
+                          <path d="m20 20-3.5-3.5" />
+                        </svg>
+                        <input
+                          type="text"
+                          class="real-search-input"
+                          placeholder="Search Karaoke..."
+                          aria-label="Search Karaoke"
+                        />
+                      </div>
+                      <button class="real-services-filter">
+                        <svg class="icon small"><use href="#i-bars" /></svg>
+                        <span>10 Rooms</span>
+                      </button>
+                    </div>
+
+                    <div class="real-rooms-grid">
+                      <!-- Karaoke 1-6 displayed in grid -->
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Karaoke 1</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱200.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Karaoke 2</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱200.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Karaoke 3</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱200.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Karaoke 4</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱200.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Karaoke 5</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱200.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="real-room-card available">
+                        <div class="real-room-head">
+                          <div class="real-room-title-wrap">
+                            <span class="status-circle green"></span>
+                            <strong>Karaoke 6</strong>
+                          </div>
+                          <span class="real-room-status available"
+                            >AVAILABLE</span
+                          >
+                        </div>
+                        <div class="real-room-avail-block">
+                          <svg class="icon rate-clock">
+                            <use href="#i-clock" />
+                          </svg>
+                          <span class="avail-rate">₱200.00/hr</span>
+                          <button class="real-start-btn">
+                            ▶ Start session
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="real-main-footer">
+                      <span>Showing 1-6 of 10 rooms</span>
+                      <div class="real-pagination">
+                        <button aria-label="Previous page" disabled>
+                          &lt;
+                        </button>
+                        <button aria-label="Next page" disabled>&gt;</button>
+                      </div>
+                    </div>
+                  </div>
+                </main>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Venue Types Section -->
+      <section class="section" aria-labelledby="venues-title">
+        <div class="shell venues">
+          <div class="venues-intro">
+            <span class="eyebrow">Built for entertainment venues</span>
+            <h2 id="venues-title">
+              Designed for<br />how you operate<span class="dot">.</span>
+            </h2>
+            <p>
+              Flexible for different venue types. Simple for your staff.
+              Powerful behind the counter.
+            </p>
+          </div>
+          <a href="#contact" class="venue-card billiards">
+            <strong>Billiard<br />Halls</strong>
+            <span class="round-arrow"
+              ><svg class="icon"><use href="#i-arrow" /></svg
+            ></span>
+          </a>
+          <a href="#contact" class="venue-card pickleball">
+            <strong>Pickleball<br />Courts</strong>
+            <span class="round-arrow"
+              ><svg class="icon"><use href="#i-arrow" /></svg
+            ></span>
+          </a>
+          <a href="#contact" class="venue-card ktv">
+            <strong>Karaoke /<br />KTV</strong>
+            <span class="round-arrow"
+              ><svg class="icon"><use href="#i-arrow" /></svg
+            ></span>
+          </a>
+          <a href="#contact" class="venue-card arcade">
+            <strong>Arcade &amp;<br />Bowling</strong>
+            <span class="round-arrow"
+              ><svg class="icon"><use href="#i-arrow" /></svg
+            ></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="section" id="features">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">What We Offer</span>
+              <h2>
+                Everything you need.<br />One system<span class="dot">.</span>
+              </h2>
+            </div>
+            <p>
+              From real-time timers to unified billing, Timer System puts your
+              venue's essential tools in one place — without the operational
+              clutter.
+            </p>
+          </div>
+          <div class="features">
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Live Session Timers</h4>
+                <p>
+                  Click any table or room on the live grid to start, pause, or
+                  transfer an ongoing session. Rates apply automatically.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Real-time clock synchronization per table</li>
+                  <li>Configurable grace periods &amp; minimum billing</li>
+                  <li>Automatic rate calculation by time of day</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-clock" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Live Session Timers</h3>
+              <p>
+                See which rooms are available, occupied, reserved, or being
+                cleaned. Track time and apply the right rate automatically.
+              </p>
+              <span class="micro"
+                >Live status · Flexible rates · Accurate time</span
+              >
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Unified POS &amp; Tabs</h4>
+                <p>
+                  Open the customer tab from the live timer and click items to
+                  add them. Everything charges to one itemized bill.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Combine table rental and kitchen orders</li>
+                  <li>Fast bar quick-keys and item lookup</li>
+                  <li>Single checkout receipt with full audit trail</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-receipt" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Unified POS &amp; Tabs</h3>
+              <p>
+                Add food, drinks, and merchandise to an active session. Close
+                out rental time and purchases in a single bill.
+              </p>
+              <span class="micro">Running tabs · Itemized checkout</span>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Smart Reservations</h4>
+                <p>
+                  Click a future time slot on the calendar, enter guest details,
+                  and lock the court or room to prevent double-bookings.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Visual timeline grid across all courts/rooms</li>
+                  <li>Automatic hold window before start time</li>
+                  <li>SMS or email booking confirmation support</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-calendar" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Smart Reservations</h3>
+              <p>
+                Keep upcoming bookings organized and reduce double-bookings with
+                a clearer view of room availability.
+              </p>
+              <span class="micro">Room calendar · Booking status</span>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Shift &amp; Cashier Tracking</h4>
+                <p>
+                  Input your starting cash float at sign-in. At shift end,
+                  reconcile cash, card, and digital drawer totals.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Blind drop and float reconciliation</li>
+                  <li>Detailed audit logs per cashier sign-in</li>
+                  <li>Automated end-of-day X and Z reports</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-drawer" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Shift &amp; Cashier Tracking</h3>
+              <p>
+                Follow cash floats, drawer activity, and shift totals to make
+                end-of-day closing easier to review.
+              </p>
+              <span class="micro">Opening float · Cash movements</span>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Inventory Control</h4>
+                <p>
+                  Stock updates automatically when drinks or cues are billed.
+                  Set reorder thresholds to receive low-stock alerts.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Real-time inventory deduction at checkout</li>
+                  <li>Automated low-stock threshold triggers</li>
+                  <li>Supports bar items, kitchen ingredients &amp; merch</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-box" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Inventory Control</h3>
+              <p>
+                Track bar and kitchen items as they sell, with visibility into
+                stock levels before supplies run short.
+              </p>
+              <span class="micro">Stock deductions · Low-stock alerts</span>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Packages &amp; Rate Rules</h4>
+                <p>
+                  Configure happy hour discounts, weekend rates, or 3-hour
+                  session combos that apply automatically by schedule.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Peak vs. off-peak hourly tier switches</li>
+                  <li>Preset 2-hour and 3-hour bundle pricing</li>
+                  <li>Auto-switches rates by weekday and clock time</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-tag" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Packages &amp; Rate Rules</h3>
+              <p>
+                Offer session bundles, combo deals, and pricing for different
+                hours so your promotions stay simple to manage.
+              </p>
+              <span class="micro">Combo bundles · Peak/off-peak rates</span>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Split &amp; Digital Payments</h4>
+                <p>
+                  At checkout, select split payment to divide the tab evenly or
+                  by item across cash, card, and QR e-wallets.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Even split or custom itemized division</li>
+                  <li>Integrated GCash, Maya, card &amp; cash tenders</li>
+                  <li>Instant partial and group settlements</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-card" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Split &amp; Digital Payments</h3>
+              <p>
+                Accept cash, cards, e-wallets, or split bills effortlessly
+                between groups without slowing down counter operations.
+              </p>
+              <span class="micro">E-Wallets · Card terminals · Split bill</span>
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Customer Profiles &amp; Loyalty</h4>
+                <p>
+                  Search a guest by mobile number or name to view membership
+                  points, past visits, and auto-apply VIP perks.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Instant lookups by phone number or QR</li>
+                  <li>Automated VIP and member discount tiers</li>
+                  <li>Full past session &amp; purchase history</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-users" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Customer Profiles &amp; Loyalty</h3>
+              <p>
+                Recognize VIP guests, view previous visit histories, and apply
+                member-tier discounts automatically upon check-in.
+              </p>
+              <span class="micro"
+                >Member rewards · Visit history · VIP rates</span
+              >
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Smart Overtime Alerts</h4>
+                <p>
+                  Color badges turn amber when 10 minutes remain, and pulse red
+                  when time is up so staff can prompt extensions.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>10-minute warning glow on active room tiles</li>
+                  <li>Configurable audio chime and counter flashes</li>
+                  <li>One-click session extension or wrap-up</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-bell" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Smart Overtime Alerts</h3>
+              <p>
+                Get automated visual warnings when tables near their time limit
+                or reservation slots to maximize turnover efficiency.
+              </p>
+              <span class="micro"
+                >Countdown badges · Audio-visual triggers</span
+              >
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Kitchen &amp; Bar Display (KDS)</h4>
+                <p>
+                  Orders sent from cashier or room tablets pop up immediately on
+                  the kitchen monitor with table tags and prep timers.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Eliminates paper tickets and lost orders</li>
+                  <li>Live order bump and prep timer status</li>
+                  <li>Tagged directly to room number and cashier</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-chef" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Kitchen &amp; Bar Display (KDS)</h3>
+              <p>
+                Route orders directly to the kitchen or bar display in real time
+                to speed up food delivery without paper tickets.
+              </p>
+              <span class="micro"
+                >Live order queue · Table tags · Bump bar</span
+              >
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Multi-Branch Cloud Portal</h4>
+                <p>
+                  Log into your owner dashboard from any phone or laptop to
+                  compare revenue, occupancy, and staff activity across sites.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Centralized owner view across all branches</li>
+                  <li>Real-time sales and room turnover sync</li>
+                  <li>Accessible on mobile, iPad, and desktop browsers</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-cloud" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Multi-Branch Cloud Portal</h3>
+              <p>
+                Monitor multiple venue branches under one centralized cloud
+                login with comparative revenue and occupancy metrics.
+              </p>
+              <span class="micro"
+                >Multi-location · Live sync · Mobile owner app</span
+              >
+            </article>
+
+            <article class="feature-card" tabindex="0">
+              <div class="feature-modal">
+                <span class="badge">HOW TO USE</span>
+                <h4>Maintenance &amp; Cloth Tracking</h4>
+                <p>
+                  Mark tables for cue tip repairs, cloth re-felting, or court
+                  cleaning to temporarily block bookings until service is done.
+                </p>
+                <ul class="feature-modal-list">
+                  <li>Prevents booking tables flagged for maintenance</li>
+                  <li>Tracks service intervals and equipment lifespan</li>
+                  <li>Automatic status change to 'Cleaning' or 'Service'</li>
+                </ul>
+              </div>
+              <div class="feature-card-top">
+                <svg class="icon"><use href="#i-tool" /></svg>
+                <span class="feature-hint">Hover for guide</span>
+              </div>
+              <h3>Equipment &amp; Table Care</h3>
+              <p>
+                Log billiard cloth refelting cycles, cue repairs, and court
+                maintenance schedules to keep all venue assets in peak shape.
+              </p>
+              <span class="micro"
+                >Service logs · Downtime tracking · Gear care</span
+              >
+            </article>
+          </div>
+          <div class="security-line">
+            <svg class="icon"><use href="#i-shield" /></svg>
+            Role-based permissions and audit trails for manager, cashier, and
+            administrator actions.
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="section" id="how-it-works">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">How it works</span>
+              <h2>From time in<br />to time out<span class="dot">.</span></h2>
+            </div>
+            <p>
+              A straightforward flow for your staff. A smoother experience for
+              every guest.
+            </p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div
+                class="step-number"
+                tabindex="0"
+                role="button"
+                aria-label="Step 01 details"
+              >
+                01
+                <div class="step-tooltip">
+                  <div class="step-tooltip-head">
+                    <span class="badge">STEP 01</span>
+                    <h4>Check In &amp; Start Timer</h4>
+                  </div>
+                  <p>
+                    Cashiers select an available room, table, or court on the
+                    interactive floor map. Choose between hourly rates, flat
+                    packages, or VIP membership pricing.
+                  </p>
+                  <ul class="step-tooltip-list">
+                    <li>Instant live clock synchronization</li>
+                    <li>Preset grace periods &amp; minimum sessions</li>
+                    <li>Auto-generates digital customer tab</li>
+                  </ul>
+                </div>
+              </div>
+              <svg class="icon"><use href="#i-monitor" /></svg>
+              <h3>Check In &amp; Start Timer</h3>
+              <p>
+                Select an open table or room, assign rate tiers or promo
+                packages, and trigger the live timer instantly.
+              </p>
+            </div>
+            <div class="step">
+              <div
+                class="step-number"
+                tabindex="0"
+                role="button"
+                aria-label="Step 02 details"
+              >
+                02
+                <div class="step-tooltip">
+                  <div class="step-tooltip-head">
+                    <span class="badge">STEP 02</span>
+                    <h4>Add Food, Drinks &amp; Cues</h4>
+                  </div>
+                  <p>
+                    Attach bar snacks, beverages, cue rentals, or paddles
+                    directly to the room's running tab without opening separate
+                    transactions.
+                  </p>
+                  <ul class="step-tooltip-list">
+                    <li>Real-time kitchen / bar inventory deduction</li>
+                    <li>One-tap items for quick counter orders</li>
+                    <li>Consolidated orders under one tab</li>
+                  </ul>
+                </div>
+              </div>
+              <svg class="icon"><use href="#i-utensils" /></svg>
+              <h3>Add Food, Drinks &amp; Cues</h3>
+              <p>
+                Charge kitchen orders, bar drinks, or equipment rentals directly
+                to the active table tab with one click.
+              </p>
+            </div>
+            <div class="step">
+              <div
+                class="step-number"
+                tabindex="0"
+                role="button"
+                aria-label="Step 03 details"
+              >
+                03
+                <div class="step-tooltip">
+                  <div class="step-tooltip-head">
+                    <span class="badge">STEP 03</span>
+                    <h4>Live Monitoring &amp; Alerts</h4>
+                  </div>
+                  <p>
+                    View every table status from the cashier terminal. Flashing
+                    badges and gentle chime alerts trigger as time expires or
+                    when incoming reservations are due.
+                  </p>
+                  <ul class="step-tooltip-list">
+                    <li>Visual countdowns &amp; overtime tracking</li>
+                    <li>Prevents double-booking clashes</li>
+                    <li>Pause timer support for temporary breaks</li>
+                  </ul>
+                </div>
+              </div>
+              <svg class="icon"><use href="#i-bell" /></svg>
+              <h3>Live Monitoring &amp; Alerts</h3>
+              <p>
+                Track live run times from the cashier desk with automatic
+                notifications before reserved slots begin.
+              </p>
+            </div>
+            <div class="step">
+              <div
+                class="step-number"
+                tabindex="0"
+                role="button"
+                aria-label="Step 04 details"
+              >
+                04
+                <div class="step-tooltip">
+                  <div class="step-tooltip-head">
+                    <span class="badge">STEP 04</span>
+                    <h4>Unified Fast Checkout</h4>
+                  </div>
+                  <p>
+                    End sessions cleanly. System automatically computes exact
+                    pro-rated minutes plus added food and drinks into a single
+                    itemized receipt.
+                  </p>
+                  <ul class="step-tooltip-list">
+                    <li>Split bills between players easily</li>
+                    <li>Accepts cash, cards, and GCash/Maya</li>
+                    <li>Instant thermal print &amp; e-receipts</li>
+                  </ul>
+                </div>
+              </div>
+              <svg class="icon"><use href="#i-receipt" /></svg>
+              <h3>Unified Fast Checkout</h3>
+              <p>
+                Stop the session and print or email an itemized bill
+                consolidating rental minutes, discounts, and orders.
+              </p>
+            </div>
+            <div class="step">
+              <div
+                class="step-number"
+                tabindex="0"
+                role="button"
+                aria-label="Step 05 details"
+              >
+                05
+                <div class="step-tooltip">
+                  <div class="step-tooltip-head">
+                    <span class="badge">STEP 05</span>
+                    <h4>Shift Close &amp; Reports</h4>
+                  </div>
+                  <p>
+                    Reconcile cash drawers at end of shift with automated
+                    discrepancy detection, sales summaries, and cloud-backed
+                    audit records.
+                  </p>
+                  <ul class="step-tooltip-list">
+                    <li>Float and drawer variance audit</li>
+                    <li>Revenue breakdown by hourly rental vs. POS</li>
+                    <li>Owner summaries sent via email</li>
+                  </ul>
+                </div>
+              </div>
+              <svg class="icon"><use href="#i-bars" /></svg>
+              <h3>Shift Close &amp; Reports</h3>
+              <p>
+                Reconcile cash drawers, review revenue summaries, and monitor
+                peak hours with automated end-of-day reports.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Inquiry Section -->
+      <section class="section" id="contact">
+        <div class="shell contact-grid">
+          <div class="contact-copy">
+            <span class="eyebrow">Contact</span>
+            <h2>Let's set up<br />your venue<span class="dot">.</span></h2>
+            <p>
+              Tell us about your business. Our team can walk you through a Timer
+              System demo tailored to your operations.
+            </p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="field-grid">
+              <div class="field">
+                <label for="venue">Venue Name</label>
+                <input
+                  id="venue"
+                  name="venue"
+                  required
+                  placeholder="Your venue name"
+                  maxlength="120"
+                />
+              </div>
+              <div class="field">
+                <label for="person">Contact Person</label>
+                <input
+                  id="person"
+                  name="person"
+                  required
+                  placeholder="Your full name"
+                  maxlength="120"
+                />
+              </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  maxlength="160"
+                />
+              </div>
+              <div class="field">
+                <label for="venueType">Venue Type</label>
+                <select id="venueType" name="venueType" required>
+                  <option value="" selected disabled>Select venue type</option>
+                  <option>Billiard Hall / Pool Club</option>
+                  <option>Pickleball Court / Sports Club</option>
+                  <option>Karaoke / KTV Lounge</option>
+                  <option>Bowling Alley &amp; Arcade</option>
+                  <option>Entertainment Center</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="rooms">Number of Tables / Rooms</label>
+                <input
+                  id="rooms"
+                  name="rooms"
+                  type="number"
+                  min="1"
+                  max="10000"
+                  step="1"
+                  required
+                  placeholder="e.g. 10"
+                />
+              </div>
+              <div class="field">
+                <label for="phone">Phone / Mobile Number</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="e.g. 0917 123 4567"
+                  maxlength="30"
+                />
+              </div>
+            </div>
+            <div class="form-bottom">
+              <span>
+                No credit card required to request a demo.<br />
+                Submitting opens your email app.
+              </span>
+              <button class="btn btn-primary" type="submit">
+                Send Inquiry
+                <svg class="icon small"><use href="#i-arrow" /></svg>
+              </button>
+            </div>
+          </form>
+          <div class="contact-details">
+            <div class="contact-line">
+              <svg class="icon"><use href="#i-phone" /></svg>
+              <div>
+                <span>Phone</span>
+                <a href="tel:+639171361944">0917 136 1944</a>
+              </div>
+            </div>
+            <div class="contact-line">
+              <svg class="icon"><use href="#i-mail" /></svg>
+              <div>
+                <span>Email</span>
+                <a href="mailto:lapitsolutions09@gmail.com"
+                  >lapitsolutions09@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-line">
+              <svg class="icon"><use href="#i-map" /></svg>
+              <div>
+                <span>Address</span>
+                <p>
+                  Marcela Bldg., Dr. 2 Jose Palma Gil Street, Barangay 34-D,
+                  Davao City, Philippines 8000
+                </p>
+              </div>
+            </div>
+            <div class="contact-line">
+              <svg class="icon"><use href="#i-globe" /></svg>
+              <div>
+                <span>Website</span>
+                <a
+                  href="https://lapsolinc.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >lapsolinc.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="shell footer-inner">
+        <a href="#overview" class="brand">
+          <span class="brand-mark">
+            <span class="l">L</span><span class="ap">AP</span>
+          </span>
+          <span class="brand-sub">TIMER SYSTEM</span>
+        </a>
+        <p class="footer-about">
+          A product by LAP IT Solutions.<br />
+          Smarter operations for time-based entertainment venues.
+        </p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#overview">Overview</a>
+          <a href="#features">What We Offer</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <span class="copyright"
+          >© <span id="year"></span> LAP IT Solutions.</span
+        >
+      </div>
+    </footer>
+
+    <!-- Interactive Live Demo Modal -->
+    <div
+      class="modal-backdrop"
+      id="demoModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="demoTitle"
+      aria-hidden="true"
+    >
+      <div class="modal">
+        <div class="modal-top">
+          <h3 id="demoTitle">Live Session Preview</h3>
+          <button class="close-modal" id="closeDemo" aria-label="Close demo">
+            <svg class="icon"><use href="#i-x" /></svg>
+          </button>
+        </div>
+        <p>
+          This is a sample table session. Start or pause the timer, add an
+          order, and see the estimated total. This demonstration does not create
+          real bookings or sales.
+        </p>
+        <div class="demo-time" id="demoTime">00:00:00</div>
+        <div class="demo-controls">
+          <button class="btn btn-primary" id="toggleTimer">Start Timer</button>
+          <button class="btn btn-ghost" id="addDrink">Add Drink +₱75</button>
+          <button class="btn btn-ghost" id="resetDemo">
+            <svg class="icon small"><use href="#i-reset" /></svg> Reset
+          </button>
+        </div>
+        <div class="demo-total">
+          <span>
+            Session at ₱120/hr + orders<br />
+            <small class="muted" id="orderCount">0 drinks added</small>
+          </span>
+          <strong id="demoTotal">₱0.00</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Logic Script -->
+    <script src="main.js"></script>
+  </body>
+</html>
