@@ -273,10 +273,15 @@
   const featureCards = $$(".feature-card");
   if (featureCards.length) {
     featureCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
+      card.addEventListener("click", (e) => {
+        // On touch screens or small viewports
+        if (
+          window.innerWidth <= 992 ||
+          window.matchMedia("(pointer: coarse)").matches
+        ) {
           const wasActive = card.classList.contains("active");
           featureCards.forEach((c) => c.classList.remove("active"));
+          // If it was already active, tapping it closes it; if not, open it
           if (!wasActive) {
             card.classList.add("active");
           }

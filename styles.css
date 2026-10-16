@@ -1684,8 +1684,16 @@ main {
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
 }
 
-.feature-card:hover .feature-modal,
-.feature-card:focus-visible .feature-modal,
+@media (hover: hover) and (pointer: fine) {
+  .feature-card:hover .feature-modal,
+  .feature-card:focus-visible .feature-modal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+}
+
 .feature-card.active .feature-modal {
   opacity: 1 !important;
   visibility: visible !important;
@@ -1849,8 +1857,16 @@ main {
   border-color: #091c33 transparent transparent transparent;
 }
 
-.step-number:hover .step-tooltip,
-.step-number:focus-visible .step-tooltip,
+@media (hover: hover) and (pointer: fine) {
+  .step-number:hover .step-tooltip,
+  .step-number:focus-visible .step-tooltip {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 .step-number.active .step-tooltip {
   opacity: 1;
   visibility: visible;
@@ -2401,6 +2417,15 @@ footer {
   .nav-links a.active:after {
     display: none;
   }
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .section-head p {
+    max-width: 100%;
+  }
   .hero {
     padding: 55px 0 60px;
   }
@@ -2780,6 +2805,42 @@ footer {
   .contact-line p {
     font-size: 13.5px;
     line-height: 1.5;
+  }
+  footer {
+    padding: 36px 0 32px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .footer-about {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #94a3b8;
+    max-width: 100%;
+    margin: 0;
+  }
+  .footer-links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin: 6px 0 8px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(80, 160, 255, 0.12);
+    border-bottom: 1px solid rgba(80, 160, 255, 0.12);
+  }
+  .footer-links a {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #cbd5e1;
+  }
+  .copyright {
+    padding-left: 0;
+    border-left: none;
+    font-size: 12px;
+    color: #64748b;
   }
 }
 
